@@ -1,4 +1,3 @@
-import "./App.css";
 import RouteComponent from "./routes";
 
 const App = () => <RouteComponent />;

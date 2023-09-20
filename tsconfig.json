@@ -6,6 +6,10 @@
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": "./",
+    "paths": {
+      "@svgr/webpack": ["node_modules/@svgr/webpack/dist/index.js"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
