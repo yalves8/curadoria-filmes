@@ -5,7 +5,8 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import Logo from "../../utils/images/wepik-creative-cinema-production-logo-20230920040419CmaA.png";
+import Logo from "../../utils/images/logoCornPng.png";
+import LogoHeader from "../../utils/images/logoheaderPng.png";
 import { Header, Content, Footer } from "antd/es/layout/layout";
 import React from "react";
 import "./style/index.scss";
@@ -25,7 +26,7 @@ const Template = ({ children }: any) => {
         className="siderTemplate"
       >
         <div className="demo-logo-vertical">
-          <img src={Logo} alt="oi" className="imageLogo" />
+          <img src={Logo} alt="Logomarca" className="imageLogo" />
         </div>
         <Menu
           theme="dark"
@@ -45,7 +46,14 @@ const Template = ({ children }: any) => {
         />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: "white" }} />
+        <Header
+          //style={{ padding: 0, background: "white" }}
+          className="headerTemplate"
+        >
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img src={LogoHeader} alt="oi" className="imageLogoHeader" />
+          </div>
+        </Header>
         <Content style={{ margin: "24px 16px 0" }}>
           <div className="divTemplate">{children}</div>
         </Content>

@@ -15,15 +15,30 @@
     border: none;
 }
 
+.headerTemplate{
+    padding: 0;
+    height: 100px;
+    display: flex;
+     background-color: #020151 !important;
+    background-image: linear-gradient( to right, #020151 70%, black   ) !important;
+}
 
+.imageLogoHeader{
+
+     width: 300px;
+    height: 70px;
+    // object-fit: cover !important;
+    // border-radius: 5%;
+    // border: none;
+}
 .demo-logo-vertical{
     display: flex;
     justify-content: center;
     //margin-bottom: 25px;
 }
 .siderTemplate{
-    background-color: #4B2E8A !important;
-    background-image: linear-gradient( to top, black,#4B2E8A 80%,black   ) !important;
+    background-color: #020151 !important;
+    background-image: linear-gradient( to top, black,#020151 80%,black   ) !important;
     width: 255px !important;
     flex: initial !important;
     min-width: none !important;
@@ -31,7 +46,7 @@
 }
 
 .menuTemplate{
-    background-color: #3c2768 !important;
+    background-color: #020151 !important;
     border-radius: 3px !important;
     //display: none;
 }
