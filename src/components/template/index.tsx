@@ -53,6 +53,19 @@ const Template = ({ children }: any) => {
           <div style={{ display: "flex", alignItems: "center" }}>
             <img src={LogoHeader} alt="oi" className="imageLogoHeader" />
           </div>
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            className="menuTemplate"
+            defaultSelectedKeys={["2"]}
+            items={new Array(15).fill(null).map((_, index) => {
+              const key = index + 1;
+              return {
+                key,
+                label: `nav ${key}`,
+              };
+            })}
+          />
         </Header>
         <Content style={{ margin: "24px 16px 0" }}>
           <div className="divTemplate">{children}</div>

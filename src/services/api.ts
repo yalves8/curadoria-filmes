@@ -3,7 +3,7 @@ import environment from "../environment";
 const fetch = require("node-fetch");
 
 // Função para fazer solicitações à API TMDb
-export async function tmdbRequest(path: string) {
+export const tmdbRequest = async (path: string) => {
   const url = `${environment.dbUrl}${path}${environment.requestConfig}`;
 
   try {
@@ -18,10 +18,10 @@ export async function tmdbRequest(path: string) {
   } catch (error) {
     console.error("Erro ao fazer a solicitação:", error);
   }
-}
+};
 
 // Função para fazer solicitações à API ViaCEP
-export async function makeCepRequest(path: string) {
+export const makeCepRequest = async (path: string) => {
   const url = `${environment.dbUrlCEP}${path}`;
 
   try {
@@ -36,4 +36,4 @@ export async function makeCepRequest(path: string) {
   } catch (error) {
     console.error("Erro ao fazer a solicitação:", error);
   }
-}
+};
