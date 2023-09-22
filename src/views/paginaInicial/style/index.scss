@@ -43,13 +43,37 @@
   transition-delay: 2s;
 }
 
-div.simplebar-track.simplebar-vertical {
-  //display: none;
-  //visibility: hidden !important;
+.titleMovieNow{
+    display: flex;
+    flex-direction: row;
+    //justify-content:space-around;
+}
+
+.radioButtonNow{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding-top: 10px;
+
+    .ant-radio-button-wrapper {
+        //border-radius: 15px;
+    }
+    .ant-radio-button-wrapper.ant-radio-button-wrapper-checked{
+        // border-top-right-radius: 15px;
+        //  border-bottom-right-radius: 15px;
+    }
 }
 .imgMovie{
     // width: 200px;
   height: 300px;
   margin: 5px;
   border-radius: 8px;
+}
+
+.spaceNow{
+    display: flex !important;
+    .ant-space{
+        
+    }
+    
 }

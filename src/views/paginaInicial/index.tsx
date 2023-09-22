@@ -1,20 +1,14 @@
-import { Avatar, Card, Carousel } from "antd";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { MovieModel } from "src/models/movie/movieModel";
 import { useAppSelector, useAppDispatch } from "src/redux/hooks";
-import { tmdbRequest, urlImage } from "src/services/api";
+import { urlImage } from "src/services/api";
 import { listNowPlayingMovie } from "src/services/movieService";
 import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import "./style/index.scss";
-import {
-  SettingOutlined,
-  EditOutlined,
-  EllipsisOutlined,
-  HeartTwoTone,
-} from "@ant-design/icons";
-import Meta from "antd/es/card/Meta";
+import { FireOutlined, HeartTwoTone } from "@ant-design/icons";
+import { Radio, Space, Typography } from "antd";
+const { Title } = Typography;
 
 const PaginaInicial = () => {
   //Estados Globais
@@ -27,7 +21,27 @@ const PaginaInicial = () => {
     //tmdbRequest("movie/now_playing");
   }, [dispatch]);
   return (
-    <>
+    <Space direction="vertical" size="large" className="spaceNow">
+      <div className="titleMovieNow">
+        <Title level={2}>
+          Tendências{" "}
+          <FireOutlined style={{ fontSize: "25px", color: "#F4A84D" }} />
+        </Title>
+        <Radio.Group
+          //onChange={handleModeChange}
+          //value={mode}
+          //style={{ marginBottom: 8 }}
+          className="radioButtonNow"
+        >
+          <Radio.Button value="hoje" className="radioHoje">
+            Hoje
+          </Radio.Button>
+          <Radio.Button value="semana" className="radioSemana">
+            Essa semana
+          </Radio.Button>
+        </Radio.Group>
+      </div>
+
       <SimpleBar className="simpleBar">
         <div className="divMovieCarrousel">
           {movieState.listMovies.map((movies: MovieModel) => (
@@ -43,7 +57,7 @@ const PaginaInicial = () => {
           ))}
         </div>
       </SimpleBar>
-    </>
+    </Space>
   );
 };
 export default PaginaInicial;
