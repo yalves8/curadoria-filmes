@@ -1,0 +1,55 @@
+@import 'src/App.scss';
+
+.divMovieCarrousel{
+    display: flex;
+  max-width: 100%;
+  //overflow: scroll;
+  //scroll-behavior: smooth;
+  transition: scroll 0.3s ease-in-out;
+  //overflow-y: hidden;
+}
+
+.image-container {
+  position: relative; /* Cria um contexto de posicionamento relativo */
+  display: inline-block; /* Para que o contêiner se ajuste ao tamanho da imagem */
+ 
+}
+
+.heartLike{
+     position: absolute; /* Cria um contexto de posicionamento absoluto */
+  top: 0; /* Posiciona o ícone no topo do contêiner */
+  left: 0; /* Posiciona o ícone no canto superior esquerdo do contêiner */
+  color: red; /* Define a cor do ícone de coração (ajuste conforme necessário) */
+  font-size: 24px; /* Define o tamanho do ícone de coração (ajuste conforme necessário) */
+  padding: 8px; /* Adiciona algum espaçamento ao redor do ícone (ajuste conforme necessário) */
+  //background: rgba(255, 255, 255, 0.7); /* Define um fundo semitransparente para o ícone (opcional) */
+  border-radius: 50%; /* Arredonda o ícone (opcional) */
+}
+
+.simpleBar{
+    padding: 15px;
+}
+.simplebar-track.simplebar-horizontal {
+  //background-color: #0074d9; /* Cor de fundo da barra deslizante horizontal */
+  border-radius: 5px; /* Borda arredondada da barra deslizante horizontal */
+}
+
+.simplebar-scrollbar{
+    background-color: $primary-color;
+    border-radius: 15px;
+}
+
+.simplebar-scrollbar:before {
+  transition-delay: 2s;
+}
+
+div.simplebar-track.simplebar-vertical {
+  //display: none;
+  //visibility: hidden !important;
+}
+.imgMovie{
+    // width: 200px;
+  height: 300px;
+  margin: 5px;
+  border-radius: 8px;
+}
