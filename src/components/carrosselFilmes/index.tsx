@@ -25,7 +25,7 @@ const CarrosselComponent = (props: any) => {
               percent={parseFloat((movies.vote_average * 10).toFixed(0))}
               strokeColor={twoColors}
               className="rateCircle"
-              size={55}
+              size={50}
             />
           </div>
         ))}

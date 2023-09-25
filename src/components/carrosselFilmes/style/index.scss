@@ -14,7 +14,11 @@
 .image-container {
   position: relative; /* Cria um contexto de posicionamento relativo */
   display: inline-block; /* Para que o contêiner se ajuste ao tamanho da imagem */
- 
+  transition: transform 0.2s ease !important;
+}
+
+.image-container:hover{
+  transform: scale(1.1) !important;
 }
 
 .heartLike{
@@ -30,6 +34,8 @@
 
 .simpleBar{
    padding: 15px !important;
+     
+
 }
 .simplebar-track.simplebar-horizontal {
   //background-color: #0074d9; /* Cor de fundo da barra deslizante horizontal */
@@ -37,7 +43,7 @@
 }
 
 .simplebar-scrollbar{
-    background-color: $primary-color;
+    background-color: #6d6d99;
     border-radius: 15px;
 }
 
@@ -50,7 +56,11 @@
   height: 300px;
   margin: 5px;
   border-radius: 8px;
+  cursor: pointer !important;
+  
 }
+
+
 
 .rateCircle{
   position: absolute;
