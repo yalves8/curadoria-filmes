@@ -1,23 +1,15 @@
 import { useEffect, useState } from "react";
-import { MovieModel } from "src/models/movie/movieModel";
 import { useAppSelector, useAppDispatch } from "src/redux/hooks";
-import { urlImage } from "src/services/api";
 import {
-  listNowPlayingMovie,
   listPopularMovies,
+  listTrendingMovie,
 } from "src/services/movieService";
-import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import "./style/index.scss";
-import {
-  FireOutlined,
-  FrownOutlined,
-  HeartTwoTone,
-  MehOutlined,
-  SmileOutlined,
-} from "@ant-design/icons";
-import { Progress, Radio, Rate, Segmented, Space, Typography } from "antd";
+import { FireOutlined } from "@ant-design/icons";
+import { Segmented, Space, Typography } from "antd";
 import CarrosselComponent from "src/components/carrosselFilmes";
+import { SegmentedValue } from "antd/es/segmented";
 const { Title } = Typography;
 
 const PaginaInicial = () => {
@@ -29,9 +21,22 @@ const PaginaInicial = () => {
   //Hooks
   const dispatch = useAppDispatch();
 
+  const handleChangeSegmented = async (value: SegmentedValue) => {
+    console.log("value", value);
+    await dispatch(listTrendingMovie(value.toString()));
+  };
+
   useEffect(() => {
-    dispatch(listNowPlayingMovie());
-    dispatch(listPopularMovies());
+    const currentDate = new Date();
+    console.log("cuu", currentDate.toLocaleDateString("en-CA"));
+    dispatch(listTrendingMovie("day"));
+    dispatch(
+      listPopularMovies(
+        `&release_date.gte=${currentDate.toLocaleDateString(
+          "en-CA"
+        )}&release_date.lte=2023-10-01`
+      )
+    );
   }, [dispatch]);
 
   return (
@@ -39,10 +44,18 @@ const PaginaInicial = () => {
       <Space direction="vertical" size="large" className="spaceNow">
         <div className="titleMovieNow">
           <Title level={2}>
-            LANÇAMENTOS{" "}
+            TENDÊNCIAS{" "}
             <FireOutlined style={{ fontSize: "25px", color: "#F4A84D" }} />
           </Title>
-          <Segmented options={options} className="segmentedNow" />
+          <Segmented
+            options={[
+              { label: "Hoje", value: "day" },
+              { label: "Essa semana", value: "week" },
+            ]}
+            defaultValue="day"
+            className="segmentedNow"
+            onChange={handleChangeSegmented}
+          />
         </div>
 
         <CarrosselComponent filmes={movieState.listMovies} />

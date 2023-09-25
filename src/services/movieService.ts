@@ -1,11 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { tmdbRequest } from "./api";
 
-export const listNowPlayingMovie = createAsyncThunk(
-  "/Movie/ListarLancamentos",
-  async () => {
+export const listTrendingMovie = createAsyncThunk(
+  "/Movie/ListarTendencias",
+  async (time: string) => {
     try {
-      const retorno = await tmdbRequest("movie/now_playing");
+      const retorno = await tmdbRequest(`trending/movie/${time}`, "");
       console.log("retorno", retorno);
       return retorno;
     } catch (error) {
@@ -16,9 +16,9 @@ export const listNowPlayingMovie = createAsyncThunk(
 
 export const listPopularMovies = createAsyncThunk(
   "/Movie/ListarPopulares",
-  async () => {
+  async (filter: string) => {
     try {
-      const retorno = await tmdbRequest("movie/popular");
+      const retorno = await tmdbRequest("movie/popular", filter);
       console.log("retorno", retorno);
       return retorno;
     } catch (error) {

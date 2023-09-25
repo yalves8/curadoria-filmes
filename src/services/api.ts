@@ -6,8 +6,8 @@ export const urlImage = (path: string) =>
   ` https://image.tmdb.org/t/p/w220_and_h330_face/${path}`;
 
 // Função para fazer solicitações à API TMDb
-export const tmdbRequest = async (path: string) => {
-  const url = `${environment.dbUrl}${path}${environment.requestConfig}`;
+export const tmdbRequest = async (path: string, filters: string) => {
+  const url = `${environment.dbUrl}${path}${environment.requestConfig}${filters}`;
 
   try {
     const response = await fetch(url);

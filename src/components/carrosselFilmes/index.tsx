@@ -22,10 +22,10 @@ const CarrosselComponent = (props: any) => {
             />
             <Progress
               type="dashboard"
-              percent={movies.vote_average * 10}
+              percent={parseFloat((movies.vote_average * 10).toFixed(0))}
               strokeColor={twoColors}
               className="rateCircle"
-              size={50}
+              size={55}
             />
           </div>
         ))}

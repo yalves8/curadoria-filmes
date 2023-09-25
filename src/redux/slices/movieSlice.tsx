@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { MovieModel } from "src/models/movie/movieModel";
 import {
-  listNowPlayingMovie,
   listPopularMovies,
+  listTrendingMovie,
 } from "src/services/movieService";
 
 interface movieState {
@@ -27,14 +27,14 @@ export const movieSlice = createSlice({
   },
   extraReducers: (builder) => {
     //listar filmes lançamentos
-    builder.addCase(listNowPlayingMovie.pending, (state) => {
+    builder.addCase(listTrendingMovie.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(listNowPlayingMovie.fulfilled, (state, action) => {
+    builder.addCase(listTrendingMovie.fulfilled, (state, action) => {
       state.listMovies = action.payload;
       state.loading = false;
     });
-    builder.addCase(listNowPlayingMovie.rejected, (state, action) => {
+    builder.addCase(listTrendingMovie.rejected, (state, action) => {
       state.loading = false;
     });
 
