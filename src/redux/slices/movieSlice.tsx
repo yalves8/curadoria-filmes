@@ -1,15 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { MovieModel } from "src/models/movie/movieModel";
-import { listNowPlayingMovie } from "src/services/movieService";
+import {
+  listNowPlayingMovie,
+  listPopularMovies,
+} from "src/services/movieService";
 
 interface movieState {
   loading: boolean;
   listMovies: MovieModel[];
+  listPopularMovies: MovieModel[];
 }
 
 const initialState: movieState = {
   loading: false,
   listMovies: [] as MovieModel[],
+  listPopularMovies: [] as MovieModel[],
 };
 
 export const movieSlice = createSlice({
@@ -21,7 +26,7 @@ export const movieSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    //listar filmes
+    //listar filmes lançamentos
     builder.addCase(listNowPlayingMovie.pending, (state) => {
       state.loading = true;
     });
@@ -30,6 +35,18 @@ export const movieSlice = createSlice({
       state.loading = false;
     });
     builder.addCase(listNowPlayingMovie.rejected, (state, action) => {
+      state.loading = false;
+    });
+
+    // listar filmes populares
+    builder.addCase(listPopularMovies.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(listPopularMovies.fulfilled, (state, action) => {
+      state.listPopularMovies = action.payload;
+      state.loading = false;
+    });
+    builder.addCase(listPopularMovies.rejected, (state, action) => {
       state.loading = false;
     });
   },

@@ -10,6 +10,6 @@ export interface MovieModel {
   release_date: string;
   title: string;
   video: boolean;
-  vote_Average: number;
+  vote_average: number;
   vote_count: number;
 }
