@@ -45,7 +45,12 @@ const Template = ({ children }: any) => {
           }))}
         />
       </Sider>
-      <Layout>
+      <Layout
+        style={{
+          //marginLeft: 80,
+          overflow: "auto",
+        }}
+      >
         <Header
           //style={{ padding: 0, background: "white" }}
           className="headerTemplate"
@@ -67,10 +72,21 @@ const Template = ({ children }: any) => {
             })}
           />
         </Header>
-        <Content style={{ margin: "24px 16px 0" }}>
-          <div className="divTemplate">{children}</div>
+        <Content
+          style={{
+            width: "1200px",
+            minWidth: "100%",
+            padding: "24px",
+          }}
+        >
+          {children}
         </Content>
-        <Footer style={{ textAlign: "center" }}>
+        <Footer
+          style={{
+            backgroundColor: "white",
+            padding: 0,
+          }}
+        >
           Curadoria de Filmes ©2023 Created by Yasmin Souza
         </Footer>
       </Layout>

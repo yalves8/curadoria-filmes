@@ -2,13 +2,11 @@
 
 
 .layoutTemplate{
-    height: 100vh;
-}
-
-.divTemplate{
-    padding: 24px;
-    background: white;
-    height: 100vh;
+    min-Height: 100vh;
+    overflow: hidden;
+     
+        
+      
 }
 
 .imageLogo{
