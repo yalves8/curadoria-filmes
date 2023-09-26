@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { MovieModel } from "src/models/movie/movieModel";
 import {
+  addFavorite,
   listPopularMovies,
   listTrendingMovie,
 } from "src/services/movieService";
@@ -31,7 +32,7 @@ export const movieSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(listTrendingMovie.fulfilled, (state, action) => {
-      state.listMovies = action.payload;
+      state.listMovies = action.payload.results;
       state.loading = false;
     });
     builder.addCase(listTrendingMovie.rejected, (state, action) => {
@@ -43,10 +44,22 @@ export const movieSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(listPopularMovies.fulfilled, (state, action) => {
-      state.listPopularMovies = action.payload;
+      state.listPopularMovies = action.payload.results;
       state.loading = false;
     });
     builder.addCase(listPopularMovies.rejected, (state, action) => {
+      state.loading = false;
+    });
+
+    //adicionar Favorito
+    builder.addCase(addFavorite.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(addFavorite.fulfilled, (state, action) => {
+      //state.addFavorite = action.payload;
+      state.loading = false;
+    });
+    builder.addCase(addFavorite.rejected, (state, action) => {
       state.loading = false;
     });
   },

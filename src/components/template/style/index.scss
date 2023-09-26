@@ -24,32 +24,27 @@
     background-image: linear-gradient( to right, $primary-color 70%, black   ) !important;
 }
 
-.imageLogoHeader{
 
-     width: 300px;
-    height: 70px;
-    // object-fit: cover !important;
-    // border-radius: 5%;
-    // border: none;
-}
 .demo-logo-vertical{
     display: flex;
     justify-content: center;
     //margin-bottom: 25px;
 }
-.siderTemplate{
-    background-color: $primary-color !important;
-    background-image: linear-gradient( to top, black,$primary-color 80%,black   ) !important;
-    width: 255px !important;
-    flex: initial !important;
-    min-width: none !important;
-    max-width: none !important;
-}
+
 
 .menuTemplate{
     background-color: $primary-color !important;
     border-radius: 3px !important;
-    //display: none;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ant-menu-item-selected{
+        background-color: $primary-color !important;
+        border-bottom: 2px  outset !important;
+        border-bottom-width: 3px !important;
+    }
 }
 
 .contentMain{

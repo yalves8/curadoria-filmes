@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "src/redux/hooks";
 import {
   listPopularMovies,
@@ -17,7 +17,7 @@ const PaginaInicial = () => {
   const movieState = useAppSelector((state: any) => state.movie);
 
   //Estados Locais
-  const [options, setOptions] = useState(["Hoje", "Essa semana"]);
+
   //Hooks
   const dispatch = useAppDispatch();
 
@@ -32,7 +32,7 @@ const PaginaInicial = () => {
     dispatch(listTrendingMovie("day"));
     dispatch(
       listPopularMovies(
-        `&release_date.gte=${currentDate.toLocaleDateString(
+        `release_date.gte=${currentDate.toLocaleDateString(
           "en-CA"
         )}&release_date.lte=2023-10-01`
       )

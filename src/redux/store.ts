@@ -1,9 +1,11 @@
 import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
 import movieReducer from "./slices/movieSlice";
+import authenticateReducer from "./slices/authenticateSlice";
 
 export const store = configureStore({
   reducer: {
     movie: movieReducer,
+    authenticate: authenticateReducer,
   },
 });
 // const addValue = Number(inccrementAmount) || 0; Se o incremenen ão ofi um numero, retorna zero

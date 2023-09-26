@@ -1,17 +1,34 @@
-import { theme, Layout, Menu } from "antd";
-import Sider from "antd/es/layout/Sider";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
-import Logo from "../../utils/images/logoCornPng.png";
+import { Button, Layout, Menu, MenuProps } from "antd";
+
 import LogoHeader from "../../utils/images/logoheaderPng.png";
 import { Header, Content, Footer } from "antd/es/layout/layout";
-import React from "react";
 import "./style/index.scss";
+import { DashboardOutlined, SaveOutlined } from "@ant-design/icons";
+import { useAppDispatch } from "src/redux/hooks";
+import { validateWithLogin } from "src/services/loginService";
 
 const Template = ({ children }: any) => {
+  const items: MenuProps["items"] = [
+    {
+      label: "Página inicial",
+      key: "1",
+      icon: <DashboardOutlined />,
+    },
+    {
+      label: "Meus filmes",
+      key: "2",
+      icon: <SaveOutlined />,
+    },
+  ];
+
+  //Hooks
+  const dispatch = useAppDispatch();
+
+  const sessao = async () => {
+    await dispatch(
+      validateWithLogin({ username: "yasminsouza", password: "Bing@min8" })
+    );
+  };
   return (
     <Layout className="layoutTemplate">
       <Layout
@@ -27,15 +44,10 @@ const Template = ({ children }: any) => {
             theme="dark"
             mode="horizontal"
             className="menuTemplate"
-            defaultSelectedKeys={["2"]}
-            items={new Array(15).fill(null).map((_, index) => {
-              const key = index + 1;
-              return {
-                key,
-                label: `nav ${key}`,
-              };
-            })}
+            defaultSelectedKeys={["1"]}
+            items={items}
           />
+          <Button onClick={sessao}>Criar Sessao Convidado</Button>
         </Header>
         <Content className="contentMain">{children}</Content>
         <Footer

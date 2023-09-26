@@ -30,6 +30,15 @@
   padding: 8px; /* Adiciona algum espaçamento ao redor do ícone (ajuste conforme necessário) */
   //background: rgba(255, 255, 255, 0.7); /* Define um fundo semitransparente para o ícone (opcional) */
   border-radius: 50%; /* Arredonda o ícone (opcional) */
+  cursor: pointer;
+  
+}
+
+.infoCircle{
+  svg {
+    background-color: #62626efa;
+    border-radius: 50% !important;
+  }
 }
 
 .simpleBar{
