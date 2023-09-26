@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Curadoria de filmes
 # Em desenvolvimento #
 
 Projeto alimentado pela API The Movie DB, que envolve autenticação de sessões de usuário e convidado, lsitagem de filmes de acordo com dia/semana, classificações, adicionar aos favoritos e a watchlist, adicionar classificações, etc..
