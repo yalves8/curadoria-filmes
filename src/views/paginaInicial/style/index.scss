@@ -1,0 +1,58 @@
+@import 'src/App.scss';
+
+.titleMovieNow{
+    display: flex;
+    flex-direction: row;
+    justify-content:baseline;
+    align-items: baseline;
+     margin-left: 15px;
+     .ant-typography{
+        color: white !important;
+     }
+     
+}
+
+.segmentedNow{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    background-color: #6f6f94;
+    //padding-top: 10px;
+  height: fit-content;
+  .ant-segmented-item.ant-segmented-item-selected {
+    background-color: #1d1d41;
+    color: white !important;
+  }
+  
+ 
+}
+
+.spaceNow{
+    display: flex !important;
+    
+}
+
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+  
+}
+
+.play-button span {
+  display: inline-block;
+  margin-left: 6px;
+  width: 80px !important;
+  height: 80px !important;
+}
+
+.imgTrailer {
+  opacity: 0.5;
+}

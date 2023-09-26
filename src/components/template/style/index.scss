@@ -1,16 +1,17 @@
-.layoutTemplate{
-    height: 100vh;
-}
+@import 'src/App.scss';
 
-.divTemplate{
-    padding: 24px;
-    background: white;
-    height: 100vh;
+
+.layoutTemplate{
+    min-Height: 100vh;
+    overflow: hidden;
+     
+        
+      
 }
 
 .imageLogo{
-    width: 250px;
-    height: 220px;
+    width: 100px;
+    height: 100px;
     border-radius: 5%;
     border: none;
 }
@@ -19,34 +20,52 @@
     padding: 0;
     height: 100px;
     display: flex;
-     background-color: #020151 !important;
-    background-image: linear-gradient( to right, #020151 70%, black   ) !important;
+     //background-color: linear-gradient( to left, $primary-color 80%, rgb(209, 50, 50)  ) !important;
+    background-image: linear-gradient( to right, $primary-color 20%, black,$primary-color    ) !important;
 }
 
-.imageLogoHeader{
 
-     width: 300px;
-    height: 70px;
-    // object-fit: cover !important;
-    // border-radius: 5%;
-    // border: none;
-}
 .demo-logo-vertical{
     display: flex;
     justify-content: center;
     //margin-bottom: 25px;
 }
-.siderTemplate{
-    background-color: #020151 !important;
-    background-image: linear-gradient( to top, black,#020151 80%,black   ) !important;
-    width: 255px !important;
-    flex: initial !important;
-    min-width: none !important;
-    max-width: none !important;
-}
+
 
 .menuTemplate{
-    background-color: #020151 !important;
+    //background-color: $primary-color !important;
     border-radius: 3px !important;
-    //display: none;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient( to right, $primary-color 20%, black,$primary-color   ) !important;
+    .ant-menu-item-selected{
+        background-color: $primary-color !important;
+        border-bottom: 2px  outset !important;
+        border-bottom-width: 3px !important;
+    }
+}
+
+.contentMain{
+     width: 1200px;
+    min-Width: 100%;
+     padding: 24px;
+     background-image: url('../../../utils/images/wepik-export-20230925205140mCjW.png');
+}
+
+.divButtonSession {
+    background-image: linear-gradient( to right,$primary-color 10%, black   ) !important;
+    width: max-content !important;
+}
+
+.titleGuest{
+    color: white !important;
+    margin: 0;
+}
+
+.divGuest{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
 }
