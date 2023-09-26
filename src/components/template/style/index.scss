@@ -10,8 +10,8 @@
 }
 
 .imageLogo{
-    width: 250px;
-    height: 220px;
+    width: 100px;
+    height: 100px;
     border-radius: 5%;
     border: none;
 }
@@ -20,8 +20,8 @@
     padding: 0;
     height: 100px;
     display: flex;
-     background-color: $primary-color !important;
-    background-image: linear-gradient( to right, $primary-color 70%, black   ) !important;
+     //background-color: linear-gradient( to left, $primary-color 80%, rgb(209, 50, 50)  ) !important;
+    background-image: linear-gradient( to right, $primary-color 20%, black,$primary-color    ) !important;
 }
 
 
@@ -33,13 +33,13 @@
 
 
 .menuTemplate{
-    background-color: $primary-color !important;
+    //background-color: $primary-color !important;
     border-radius: 3px !important;
     width: 100% !important;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-image: linear-gradient( to right, $primary-color 20%, black,$primary-color   ) !important;
     .ant-menu-item-selected{
         background-color: $primary-color !important;
         border-bottom: 2px  outset !important;
@@ -52,4 +52,20 @@
     min-Width: 100%;
      padding: 24px;
      background-image: url('../../../utils/images/wepik-export-20230925205140mCjW.png');
+}
+
+.divButtonSession {
+    background-image: linear-gradient( to right,$primary-color 10%, black   ) !important;
+    width: max-content !important;
+}
+
+.titleGuest{
+    color: white !important;
+    margin: 0;
+}
+
+.divGuest{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center;
 }

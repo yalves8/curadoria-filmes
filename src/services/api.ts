@@ -64,7 +64,7 @@ export const tmdbRequestDelete = async (path: string, body: any) => {
       body: JSON.stringify(body), // Converte o objeto em uma string JSON
       headers: headers,
     });
-
+    console.log("body", body);
     if (response.ok) {
       const data = await response.json();
       console.log("api", data); // Aqui, você pode processar a resposta recebida.

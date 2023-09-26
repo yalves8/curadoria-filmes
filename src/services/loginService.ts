@@ -36,6 +36,23 @@ export const validateWithLogin = createAsyncThunk(
   }
 );
 
+export const guestSession = createAsyncThunk(
+  "/Authenticate/GuestSession",
+  async () => {
+    try {
+      const sessaoId = await tmdbRequestGet(
+        `authentication/guest_session/new`,
+        ""
+      );
+      console.log("autentica", sessaoId);
+
+      return sessaoId;
+    } catch (error: any) {
+      throw new Error(error.response.data.Message);
+    }
+  }
+);
+
 export const deletarSessao = createAsyncThunk(
   "/Authenticate/DeletarSessao",
   async (idSession: string) => {
