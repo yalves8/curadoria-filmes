@@ -95,6 +95,7 @@ const Template = ({ children }: any) => {
         open={authenticateState.modalGuest}
         onCancel={() => dispatch(setModalGuest(false))}
         footer={null}
+        className="modalGen"
       >
         <LoginGuest />
       </Modal>

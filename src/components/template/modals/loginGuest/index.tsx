@@ -36,7 +36,7 @@ const LoginGuest = () => {
         </Form.Item>
       </Row>
       <Row gutter={[24, 24]}>
-        <Col span={24}>
+        <Col span={24} className="modalFooter">
           <Space size="middle">
             <Button
               className="cancelButton"
